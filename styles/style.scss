@@ -1,0 +1,114 @@
+@import "./index.scss";
+
+main {
+  margin: 10px 0;
+  max-width: 800px;
+  background: #eaeaea;
+  border-radius: 6px;
+  box-shadow: 8px 8px 10px #0000001e, -8px 8px 10px #0000001e;
+
+  .container_1 {
+    padding: 30px;
+    @include flex(flex, column, center, flex-start);
+    h1 {
+      color: $primaryCyan;
+    }
+    h3 {
+      color: $primaryBrightYellow;
+      margin: 20px 0;
+    }
+    p {
+      color: $neutralGrayishBlue;
+    }
+  }
+
+  .container_2 {
+    background: #48bebd;
+    min-height: fit-content;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    @include flex(flex, row, center, center);
+
+    > * {
+      width: 50%;
+    }
+
+    .sign_up {
+      padding: 30px;
+      background: $primaryCyan;
+      border-bottom-left-radius: 6px;
+      @include flex(flex, column, center, center);
+      text-align: left;
+      @include flex(flex, column, center, center);
+      .texts {
+        @include flex(flex, column, center, flex-start);
+        h3 {
+          color: $neutralLightGray;
+        }
+        div {
+          margin: 20px 0 8px 0;
+          @include flex(flex, row, center, _);
+          .price {
+            color: $neutralLightGray;
+            font-size: 2rem;
+            font-weight: 600;
+          }
+          .limit {
+            color: #d2d2d2b5;
+            margin-left: 20px;
+            line-height: 2.5;
+          }
+        }
+        p {
+          color: $neutralLightGray;
+          font-size: .9rem;
+        }
+      }
+      button {
+        margin: 20px 0 0 0;
+        background: $primaryBrightYellow;
+        width: 250px;
+        height: 50px;
+        border: none;
+        box-shadow: 8px 8px 10px #0000001e, -8px 8px 10px #0000001e;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: 700px;
+        font-size: 1.1rem;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .about_us {
+      height: 100%;
+      padding: 30px;
+      border-bottom-right-radius: 6px;
+      background: #48bebd;
+      h3 {
+        color: $neutralLightGray;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #e4e4e4b5;
+      }
+    }
+  }
+}
+@include screen(640px) {
+  main {
+    width: 90%;
+    .container_2 {
+      @include flex(flex, column, center, center);
+      .sign_up {
+        width: 100%;
+        border-bottom-left-radius: 0;
+      }
+      .about_us {
+        width: 100%;
+        border-bottom-left-radius: 6px;
+      }
+    }
+  }
+}

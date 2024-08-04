@@ -1,0 +1,34 @@
+// variables
+$primaryCyan: #2ab2af;
+$primaryBrightYellow: #c0df34;
+$neutralLightGray: #e5eff5;
+$neutralGrayishBlue: #98a6bd;
+
+// mixins
+@mixin flex($display, $fDirection, $jContent, $aItems) {
+  display: $display;
+  flex-direction: $fDirection;
+  justify-content: $jContent;
+  align-items: $aItems;
+}
+@mixin screen($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Karla;
+  body {
+    min-width: 100vw;
+    min-height: 100vh;
+    background: #d1d7e0;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
